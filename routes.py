@@ -87,7 +87,6 @@ def add_todo():
 @app.route('/todo/<int:todo_id>', methods=['GET'])
 @jwt_required()
 def get_todo(todo_id):
-    # validate_csrf()
     user_id = get_jwt_identity()
     todo = Todo.query.get(todo_id)
     if todo:
@@ -149,7 +148,6 @@ def mark_uncomplete(todo_id):
 @app.route('/todo/<int:todo_id>', methods=['DELETE'])
 @jwt_required()
 def delete_todo(todo_id):
-    # validate_csrf()
     user_id = get_jwt_identity()
     todo = Todo.query.get(todo_id)
     if todo:
