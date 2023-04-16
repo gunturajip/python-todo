@@ -12,25 +12,20 @@ To run the project locally, follow these steps:
 2. Initialize and activate a new virtual environment
    - For Windows:
      Type the following command in VS Code terminal:
-     `
-     python -m venv env
-     `
-     `
-     env\Scripts\activate
-     `
+     `python -m venv env`
+     `env\Scripts\activate`
    - For Linux:
      Type the following command in VS Code terminal:
-     `
-     python3 -m venv env
-     `
-     `
-     source bin/activate
-     `
+     `python3 -m venv env`
+     `source bin/activate`
 3. Install the required dependencies
-     `
-     pip install -r requirements.txt
-     `
+     `pip install -r requirements.txt`
 4. Set up the database and environment variables
+   - For Windows:
+     Type the following command in VS Code terminal:
+     `flask db init`
+     `flask db migrate`
+     `flask db upgrade`
 5. Run the application using `flask run` or `flask run --debug`
 
 ## Support
