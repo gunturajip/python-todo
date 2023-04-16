@@ -67,7 +67,10 @@ def get_todos():
     user_id = get_jwt_identity()
     user = User.query.get(user_id)
     todos = user.todos
-    return jsonify({'status': 200, 'message': 'successfully get all todos', 'data': todos}), 200
+    todo_list = []
+    for todo in todos:
+        todo_list.append({'id': todo.id, 'title': todo.title, 'description': todo.description, 'completed': todo.completed, 'user_id': todo.user_id})
+    return jsonify({'status': 200, 'message': 'successfully get all todos', 'data': todo_list}), 200
 
 @app.route('/todo', methods=['POST'])
 @jwt_required()
@@ -92,7 +95,7 @@ def get_todo(todo_id):
     if todo:
         if todo.user_id != user_id:
             return jsonify({'status': 401, 'message': 'you are not allowed to access this todo'}), 401
-        return jsonify({'status': 200, 'message': 'successfully get current todo', 'data': todo}), 200
+        return jsonify({'status': 200, 'message': 'successfully get current todo', 'data': {'id': todo.id, 'title': todo.title, 'description': todo.description, 'completed': todo.completed, 'user_id': todo.user_id}}), 200
     else:
         return jsonify({'status': 404, 'message': 'current todo doesn\'t exist'}), 404
 
