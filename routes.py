@@ -134,7 +134,7 @@ def mark_complete(todo_id):
 
 @app.route('/todo/<int:todo_id>/uncompeted', methods=['POST'])
 @jwt_required()
-def mark_complete(todo_id):
+def mark_uncomplete(todo_id):
     user_id = get_jwt_identity()
     todo = Todo.query.get(todo_id)
     if todo:
