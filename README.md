@@ -14,12 +14,16 @@ To run the project locally, follow these steps:
      Type the following command in VS Code terminal:
      `
      python -m venv env
+     `
+     `
      env\Scripts\activate
      `
    - For Linux:
      Type the following command in VS Code terminal:
      `
      python3 -m venv env
+     `
+     `
      source bin/activate
      `
 3. Install the required dependencies
@@ -34,6 +38,8 @@ To run the project locally, follow these steps:
 If you find this project useful, please consider giving it a ⭐️ on [GitHub](https://github.com/gunturajip/python-todo). Your support is greatly appreciated!
 
 ## Endpoints
+
+### User
 
 | Method | Endpoint          | Description                       |
 | ------ | ----------------- | --------------------------------- |
